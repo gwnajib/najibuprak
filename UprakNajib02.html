@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Praktek PWEB #2</title>
+<script>
+    function hitung(){
+var  quiz = parseInt(document.fform.qz.value);
+var  tugas = parseInt(document.fform.ts.value);
+var  uts = parseInt(document.fform.uts.value);
+var  uas = parseInt(document.fform.uas.value);
+var grade;
+var ket;
+
+var akhir = ( quiz * 0.1) + ( tugas * 0.2) + ( uts * 0.3 ) + ( uas * 0.4 );
+ if (akhir >= 80 && akhir <= 100) {
+grade = "A";
+ket = "Lulus Dengan Sangat Baik";
+ }
+ else if (akhir >= 68 && akhir <= 80 ) {
+grade = "B";
+ket = "Lulus Dengan Baik";
+ }
+ else if (akhir >= 55 && akhir <= 68 ) {
+grade = "B";
+ket = "Lulus Dengan Cukup";
+ }
+ else if (akhir >= 38 && akhir <= 55 ) {
+grade = "D";
+ket = "Lulus Dengan Kurang";
+ }
+ else if (akhir < 38 ) {
+grade = "E";
+ket = "Tidak Lulus";
+ }
+
+document.fform.NA.value = akhir;
+document.fform.IP.value = grade;
+document.fform.Ket.value = ket;
+
+
+    }
+</script>
+</head>
+<body>
+    <center>
+        <form name="fform">
+    <table border="1">
+        <tr>
+            <td rowspan="3"><img style="width: 100px;" src="download.png" alt="IGASAR"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><h2>Menghitung Indeks Prestasi Siswa</h2></td>
+        </tr>
+    <tr>
+        <td colspan="3"><h2>Peserta Didik SMK Igasar Pindad Bandung</h2></td>
+    </tr>
+    <tr>
+        <td>Quiz 10 % <input type="text" size="5" name="qz"></td>
+        <td>Tugas 20 % <input type="text" size="5"name="ts"></td>
+        <td>UTS 30 % <input type="text" size="5" name="uts"></td>
+        <td>UAS 40 % <input type="text" size="5" name="uas"></td>
+    </tr>
+    <tr>
+        <td style="text-align: center;" colspan="4">
+            <input type="button" value="Hitung" onclick="hitung()">
+            <input type="reset" value="Ulang">
+        </td>
+    </tr>
+    <tr>
+<td colspan="4" style="text-align: center;">
+    Nilai Akhir <input type="text" name="NA">
+</td>
+    </tr>
+<tr>
+    <td colspan="4" style="text-align: center;">
+        Indeks Prestasi : <input type="text" name="IP">
+        Keterangan : <input type="text" name="Ket">
+    </td>
+</tr>    
+</table>
+</form>
+<a href="index.html"><input type="button" value="Back"></a>
+</center>
+</body>
+</html>
